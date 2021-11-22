@@ -1,0 +1,51 @@
+Bug: Keyboard would print incorrect characters, duplicates, double spacing. 
+Solution: Added checks to see that a character would only be printed if a button was pressed and not de-pressed.
+By: Rishov in 2 minutes
+
+Bug: Keyboard would print an endless string 
+Solution: Added a buffer which also stores the string typed to be used for later. 
+By: Rishov in 2 minutes
+
+Bug: If we added code we would not be able to access the filesystem properly.
+Solution: The filesystem location was hard coded, instead of being set by mos->start
+By: Group in 2 days
+
+Bug: Keyboard buffer would erase past buffer length, going to the previous line.
+Solution: Created a check so that if buffer index is 0, do not erase.
+By: Rishov in 5 minutes
+
+Bug: Interrupts would not be sent to the proper locaitons when sending eoi.
+Solution: Were not sending interrupt to both slave and master.
+By: Group in 2 hours
+
+Bug: Would page fault when filling the keyboard buffer and pressing enter
+Solution: No check when getting args for arguments greater than 33 characters.
+By: Jon in 5 minutes
+
+Bug: File read page faults when reading files larger than one page (4KB)
+Solution: off by 1 error in selecting data block index (index out of bounds)
+By: Bill in 1 hour
+
+Bug: Syscall assembly error handling does not work
+Solution: used jg instead of jge in linkage
+By: Bill in 1 hour
+
+Bug: Were not able to halt properly.
+Solution: Corrected label for 4MB. Were originally setting 4MB to 4KB.
+By: Group in 40 hours
+
+Bug: Were not able to recieve keyboard interrupts after switching terminals/accessing rtc.
+Solution: Were not sending eoi after exiting from the keyboard handler.
+By: Janarth in 3 hours
+
+Bug: Would print null characters in a file.
+Solution: Created new putc function to ignore null characters.
+By: Janarth in 2 hours
+
+Bug: Would not print newline after execution of Hello program
+Solution: Forgot to add a check for newline and end of file, so added that in read.
+By: Rishov in 2 hours
+
+Bug: Screen would become disoriented upon reaching the last row of the terminal.
+Solution: Was not peroperly setting up scrolling. Would only copy certain values on the screen and would shift them a little bit right. Would also clear the screen and start bugger from botting of screen and not top.
+By: Rishov in 2 days
