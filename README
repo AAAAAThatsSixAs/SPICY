@@ -1,6 +1,3 @@
-ECE391 MP3 - Package contents
-================================
-
 createfs
     This program takes a flat source directory (i.e. no subdirectories
     in the source directory) and creates a filesystem image in the
